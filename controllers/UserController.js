@@ -40,7 +40,7 @@ exports.adduser = (req, res) => {
 // get all users
 exports.getusers = (req, res) => {
   dbConn.query(
-    'SELECT * FROM user_table  where id_role=(select id from role where role="utilisateur") and deleted=false',
+    "SELECT * FROM user_table  where id_role=3 and deleted=false",
     (err, rows, fields) => {
       if (!err) res.send(rows);
       else console.log(err);
@@ -218,7 +218,7 @@ exports.getlanguage = (req, res) => {
 // get all employers
 exports.getallemployes = (req, res) => {
   dbConn.query(
-    'SELECT * FROM user_table where id_role=(select id from role where role="employeur") and deleted=false',
+    "SELECT * FROM user_table where id_role=2 and deleted=false",
     (err, rows, fields) => {
       if (!err) res.send(rows);
       else console.log(err);
