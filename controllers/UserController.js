@@ -177,26 +177,10 @@ exports.getuserpictures = (req, res) => {
 // add new image
 exports.addimage = (req, res) => {
   const id = req.params.id;
-  // add new path to store images 
-  const newpath = "D:/imagesfolder";
-  fs.access(path, (error) => {
-    if (error) {
-      fs.mkdir(path, (error) => {
-        if (error) {
-          console.log(error);
-        } else {
-          console.log("New Directory created successfully !!");
-        }
-      });
-    } else {
-      console.log("Given Directory already exists !!");
-    }
-  });
-
+  // add new path to store images
+  const newpath = "D:/Project_Dashboard/Frontend/myapp/public/imgs/";
   const file = req.files.file;
   const filename = file.name;
-  console.log(filename);
-
   file.mv(`${newpath}${filename}`);
   dbConn.query(
     "insert into user_images(user_id,img_name)  values($1,$2)",
