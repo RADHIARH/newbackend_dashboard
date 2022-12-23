@@ -42,7 +42,7 @@ exports.getusers = (req, res) => {
   dbConn.query(
     "SELECT * FROM user_table  where id_role=3 and deleted=false",
     (err, rows, fields) => {
-      if (!err) res.send(rows);
+      if (!err) res.send(rows.rows);
       else console.log(err);
     }
   );
@@ -220,7 +220,7 @@ exports.getallemployes = (req, res) => {
   dbConn.query(
     "SELECT * FROM user_table where id_role=2 and deleted=false",
     (err, rows, fields) => {
-      if (!err) res.send(rows);
+      if (!err) res.send(rows.rows);
       else console.log(err);
     }
   );
