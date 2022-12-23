@@ -21,7 +21,7 @@ exports.sendemail = (req, res) => {
   });
 
   var mailOptions = {
-    from: process.env.EMAIL, // sender address
+    from: "radhia.rahmani@sesame.com.tn", // sender address
     to: req.body.email, // list of receivers
     code: req.body.code, // Subject line
     url: req.body.url,
