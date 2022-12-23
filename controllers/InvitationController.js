@@ -6,11 +6,12 @@ exports.sendemail = (req, res) => {
     service: "gmail",
     auth: {
       type: "OAuth2",
-      user: process.env.EMAIL,
-      pass: process.env.WORD,
-      clientId: process.env.OAUTH_CLIENTID,
-      clientSecret: process.env.OAUTH_CLIENT_SECRET,
-      refreshToken: process.env.OAUTH_REFRESH_TOKEN,
+      user: "radhia.rahmani@sesame.com.tn",
+      pass: "RADHIASESAME2016",
+      clientId:
+        "5865254077-lok9krraq0dfpi9t4870jhn9pq4po5pl.apps.googleusercontent.com",
+      clientSecret: "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",
+      refreshToken: "db59347fffd625b2c4e84703019f91fe",
     },
   });
   transporter.verify((err, success) => {
